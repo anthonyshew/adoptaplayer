@@ -23,7 +23,7 @@ export default ({ location }) => {
 }
 
 const SuccessMessage = () => (
-    <p>¡Gracias por registrarte! En breve estarás escuchando de nosotros (generalmente en menos que 48 horas).</p>
+    <p className="success">¡Gracias por registrarte! Actualmente, tenemos muchos padrinos esperando que un jugador y agregaremos su nombre a la lista. Le informaremos cuando su nombre sea el próximo.</p>
 )
 
 const SignUpForm = ({ setSuccess }) => {
