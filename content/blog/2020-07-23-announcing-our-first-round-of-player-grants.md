@@ -32,6 +32,8 @@ Players may nominate themselves, sponsors may nominate the players they sponsor,
 
 [Send us a direct message on Instagram!](https://www.instagram.com/adoptanmilbplayer/)
 
+The last day that we will accept a nomination is 8/5/2020 so don't forget!
+
 ## About the Grants:
 
 We will have 3 grants available for this round of awards. They are as follows:
