@@ -15,8 +15,7 @@ const NotFoundPage = ({ data, location }) => {
       </SEO>
       <div className="page-404">
         <h1>404</h1>
-        <p>Pardon our dust! We're still under construction so if you think there should be a page here, check back in a day or two and we'll have something here for you.</p>
-        <p>If you've reached this page in error, find one that does exist!</p>
+        <p>Uh oh! Looks like this page doesn't exist.</p>
       </div>
     </Layout>
   )
