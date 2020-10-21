@@ -58,6 +58,13 @@ export default ({ location }) => {
                   }
                 }
             }
+            batHerUp: file(absolutePath: { regex: "/media/bather-up.jpg/" }) {
+                childImageSharp {
+                  fixed(width: 175) {
+                    ...GatsbyImageSharpFixed
+                  }
+                }
+            }
         }
     `)
 
@@ -81,6 +88,16 @@ export default ({ location }) => {
             image: data.elUniversal.childImageSharp.fixed,
             imageAlt: "Aficionados Ayudan Económicamente a Peloteros de Ligas Menores",
             link: "https://www.eluniversal.com.mx/universal-deportes/beisbol/covid-19-aficionados-ayudan-economicamente-peloteros-de-ligas-menores",
+        },
+        {
+            publication: "Bat'Her Up Podcast",
+            title: "Leveling the Minor League Playing Field with Katie Walden",
+            author: "Shannon Corcoran",
+            date: "25 September 2020",
+            mediaType: "audio",
+            image: data.batHerUp.childImageSharp.fixed,
+            imageAlt: "Leveling the Minor League Playing Field with Katie Walden",
+            link: "https://batherup.podbean.com/e/episode-3-leveling-the-minor-league-playing-field-with-katie-walden/",
         },
         {
             publication: "Arizona 12News",
