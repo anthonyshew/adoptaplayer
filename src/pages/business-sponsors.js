@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import '../styles/business-sponsors.scss'
 import { useStaticQuery, graphql } from "gatsby"
 import Image from 'gatsby-image'
@@ -6,11 +6,17 @@ import Image from 'gatsby-image'
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-import useAnimateOnVisible from "../hooks/useAnimateOnVisible"
 
 export default ({ location }) => {
     const data = useStaticQuery(graphql`
     query BusinessSponsors {
+        entourage: file(absolutePath: {regex: "/entourage-logo.png/"}) {
+            childImageSharp {
+              fixed(width: 200) {
+                ...GatsbyImageSharpFixed
+              }
+            }
+          }
         orvilleAndrew: file(absolutePath: {regex: "/OA-icon.png/"}) {
             childImageSharp {
               fixed(width: 150) {
@@ -29,6 +35,14 @@ export default ({ location }) => {
     `)
 
     const sponsors = [
+        {
+            name: "Entourage Sports",
+            description: "Through their mobile app, Entourage Sports provides minor leaguers the opportunity to do remote coaching with members of the baseball community both in and out of season! Sign up with an AaML sponsored player to support us!",
+            image: data.entourage.childImageSharp.fixed,
+            imageAlt: "",
+            code: "",
+            link: "https://www.entourageathletics.com/team"
+        },
         {
             name: "Orville Andrew",
             description: "Owned by St. Louis Cardinals farmhand Patrick Dayton and his brother, Glenn, Orville Andrew creates candles for all occassions. Their bountiful scents can add that extra ounce of cozy to your home or give your space at your office some character.",
@@ -75,11 +89,9 @@ export default ({ location }) => {
 }
 
 const Card = ({ name, description, image, imageAlt, code, link }) => {
-    const card = useRef(null)
-    useAnimateOnVisible({ element: card })
 
     return (
-        <section className="sponsor-card" ref={card}>
+        <section className="sponsor-card">
             <h2>{name}</h2>
             <div className="flex">
                 <div className="img-container">

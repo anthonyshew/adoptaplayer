@@ -65,6 +65,7 @@ const Index = ({ data, location }) => {
         <p>Shop with our business sponsors to support minor leaguers that own businesses - and us!</p>
         <Link className="sponsors-link" to="/business-sponsors">
           <div className="sponsors-flex">
+            <Image className="business-sponsor" fixed={data.entourage.childImageSharp.fixed} alt="Entourage Sports" />
             <Image className="business-sponsor" fixed={data.orvilleAndrew.childImageSharp.fixed} alt="Orville Andrew" />
             <Image className="business-sponsor" fixed={data.backwoodPine.childImageSharp.fixed} alt="Backwood Pine" />
           </div>
@@ -178,6 +179,13 @@ export const pageQuery = graphql`
     corrins: file(absolutePath: {regex: "/the-corrins.png/"}) {
       childImageSharp {
         fixed(width: 90, height: 90) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    entourage: file(absolutePath: {regex: "/entourage-logo.png/"}) {
+      childImageSharp {
+        fixed(width: 110) {
           ...GatsbyImageSharpFixed
         }
       }
