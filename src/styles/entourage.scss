@@ -48,14 +48,36 @@
     }
 
     .side-scroller-container {
+        margin-left: 1vw;
         margin-bottom: 3rem;
+
+        ::-webkit-scrollbar {
+            -webkit-appearance: none;
+            height: 10px;
+            -webkit-overflow-scrolling: auto;
+            border: 2px solid $blue;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            width: 5px;
+            height: 7px;
+            border-radius: 4px;
+            background-color: $light-blue;
+        }
+
+        ::-webkit-scrollbar-button {
+            width: 0;
+            height: 0;
+            display: none;
+        }
 
         .content-container {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
-            width: 97.5vw;
+            width: 96.5vw;
             height: 350px;
             overflow-x: auto;
         }
