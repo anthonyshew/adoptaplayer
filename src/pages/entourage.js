@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState, useRef } from 'react'
 import "../styles/entourage.scss"
+
+import useMediaQuery from '../hooks/useMediaQuery'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Arrow from "../svg/arrow-right.svg"
+
 
 export default ({ location }) => {
+    const [scrollPosition, setScrollPosition] = useState(0)
+    const scrollRef = useRef(null)
+    const isSmallScreen = useMediaQuery("(max-width: 1035px")
+
     return (
         <Layout location={location}>
             <SEO title="Entourage Sports Partnership">
@@ -41,8 +49,8 @@ export default ({ location }) => {
                     autoPlay
                 />
 
-                <div className="side-scroller-container">
-                    <div className="content-container">
+                <div className="side-scroller-container" >
+                    <div className="content-container" ref={scrollRef} onScroll={() => setScrollPosition(scrollRef.current.scrollLeft)}>
                         <div className="content-box">
                             <h3>For Minor Leaguers</h3>
                             <p>Players can make a significant amount of income by becoming a part of the Entourage program.</p>
@@ -59,6 +67,12 @@ export default ({ location }) => {
                             <p>Through America's pastime, we all can create relationships that last a lifetime and benefit everyone involved.</p>
                         </div>
                     </div>
+                    {scrollPosition === 0 && isSmallScreen && <Arrow style={{
+                        width: "35px",
+                        position: "absolute",
+                        bottom: "16px",
+                        right: "16px",
+                    }} />}
                 </div>
                 <div className="sign-up-flex">
                     <a

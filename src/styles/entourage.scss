@@ -24,6 +24,7 @@
             display: block;
             margin: 0 auto;
             width: 50%;
+            min-width: 350px;
         }
     }
 
@@ -50,6 +51,8 @@
     .side-scroller-container {
         margin-left: 1vw;
         margin-bottom: 3rem;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
 
         ::-webkit-scrollbar {
             -webkit-appearance: none;
