@@ -15,7 +15,7 @@ export default ({ location }) => {
 
     return (
         <Layout location={location}>
-            <SEO title="Entourage Sports Partnership">
+            <SEO title="Entourage Athletics Partnership">
                 <meta name="og:image" content="/media/entourage-logo.png" />
                 <meta name="twitter:image" content="/media/entourage-logo.png" />
                 <meta name="twitter:image:alt" content="Remote coaching by minor league players!" />
